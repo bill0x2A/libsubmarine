@@ -1,0 +1,28 @@
+{
+  "name": "submarineauctionsfork",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/lorenzb/libsubmarine.svg?branch=master)](https://travis-ci.org/lorenzb/libsubmarine)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bill0x2A/libsubmarine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bill0x2A/libsubmarine/issues"
+  },
+  "homepage": "https://github.com/bill0x2A/libsubmarine#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ethereumjs-tx": "^2.1.2",
+    "ethereumjs-wallet": "^1.0.1",
+    "web3": "^1.3.1"
+  }
+}
