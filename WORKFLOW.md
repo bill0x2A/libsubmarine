@@ -18,12 +18,20 @@ All LibSubmarine conforming clients will have at minimum the 3 transactions abov
 
 ### Generate `TxUnlock`
 
-The very first thing that will happen during a submarine send is that the end-user (e.g. JavaScript code running on the DApp's website, or perhaps a native or mobile application) will first generate a specially formatted "TxUnlock" transaction. This unlock transaction "unlocks" committed funds from the commit address and sends those to your DApp. It also calls the `unlock(submarineId)` function on LibSubmarine/your DApp. We provide the `generate_commit.py` program that generates this TxUnlock transaction, and also informs you of what your associated Commit address will be. This program can be imported as a python module (you can refer to the unit tests to see how they do this) or run on the command line (see `generate_commit.py -h` for help). What this program does is described below:
+The very first thing that will happen during a submarine send is that the end-user
+(e.g. JavaScript code running on the DApp's website, or perhaps a native or mobile application)
+will first generate a specially formatted "TxUnlock" transaction.
+This unlock transaction "unlocks" committed funds from the commit address and sends those to your DApp.
+It also calls the `unlock(submarineId)` function on LibSubmarine/your DApp.
+We provide the `generate_commit.py` program that generates this TxUnlock transaction, and also informs you of what your associated Commit address will be.
+This program can be imported as a python module (you can refer to the unit tests to see how they do this) or run on the command line (see `generate_commit.py -h` for help).
+What this program does is described below:
 
 The end-user `A` chooses a (e.g. 256-bit) witness `w` uniformly at random, and computes
 `commit = Keccak256(addr(End User) | addr(DApp Contract/LibSubmarine) | value | optionalDAppData | w | gasPrice | gasLimit)`.
 
-Where `value` is the amount of Wei committed to in this Submarine Send workflow, `optionalDAppData` is any arbitrary data you would like to embed inside the Submarine Send, and gasPrice and gasLimit are the gas price and limit you will be using in the unlock transaction.
+Where `value` is the amount of Wei committed to in this Submarine Send workflow, `optionalDAppData` is any arbitrary data you would like to embed inside the Submarine Send,
+and gasPrice and gasLimit are the gas price and limit you will be using in the unlock transaction.
 
 This computed `commit` is then used as the `submarineId` for the LibSubmarine contract.
 
